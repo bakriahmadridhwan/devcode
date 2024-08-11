@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <div class="container">
-      <!-- TODO: Tambahkan selectedContact dan isEdit sebagai props pada komponen InputContactForm -->
       <input-contact-form
         title="Devcode Contact Manager"
         :selectedContact="selectedContact"
