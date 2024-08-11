@@ -83,6 +83,18 @@ export default {
   },
   methods: {
     async onSubmit() {
+      const regexPhoneNumber = /^[0-9]*$/;
+      const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+      if (!regexPhoneNumber.test(this.input.phone_number)) {
+        alert("Nomor telepon hanya dapat berupa angka.");
+        return;
+      }
+      if (!regexEmail.test(this.input.email)) {
+        alert("Format email tidak sesuai.");
+        return;
+      }
+
       if (this.isEdit) {
         await this.$store.dispatch("updateContactInfo", {
           id: this.selectedContact.id,
